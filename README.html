@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<body>
+		<form>
+			<h1>Правила</h1>
+			<p>Заменить регулярные выражения на необходимые слова.</p>
+			<p>Ответы писать с большой буквы.</p>
+                        <p>Удачи!</p>
+			<h1>Вопросы:</h1>
+			<p>1. БЖД в институте а в школе...</p>
+			<p>2. Нота</p>
+			<p>3. Имя девочки</p>
+			<p>4. Мир.Труд. ?</p>
+			<p>5. "Прятки"</p>
+			<p>6. Повар на корабле</p>
+			<p>7. Дорогая марка машины</p>
+			<p>8. На дороге можно оставить</p>
+			<p>9. Главная фишка города Сочи</p>
+			<p>10. Место для отдыха</p>
+			1	<input type="text" value="/.б./"> 	
+                        2	<input type="text" value="/[^дрм]./">	
+                        3	<input type="text" value="/.(н|м)а/">	
+                        4	<input type="text" value="/[МРЫ](а|з)./">	
+                        5	<input type="text" value="/[^К-Я]г(ра|ма)/">
+			<br><br>
+			6	<input type="text" value="/К{1}ок{1}/">		  
+                        7	<input type="text" value="/[К-М]ек{1}(сус|су.)/">		
+                        8	<input type="text" value="/Сле|Сма./">	
+                        9	<input type="text" value="/[ОРМ]ор{1}(я|е)/">		
+                       10	<input type="text" value="/Д.(ча)$/">
+			<br><br>
+		</form>
+		<input type="button" value="Проверить" onclick=buttonclick()>
+	
+		<script>
+			let rightanswers =
+			[
+			"Обж",
+			"Ля",
+			"Яна",
+			"Май",
+			"Игра",
+			"Кок",
+			"Лексус",
+			"След",
+			"Море",
+			"Дача",
+			];
+			
+			
+			function buttonclick() {
+				for (let i = 0; i < document.forms[0].length; i++  ) {
+				if ( JSON.stringify( document.forms[0].elements[i].value ) === JSON.stringify( rightanswers[i]) )
+				{ document.forms[0].elements[i].value = 'Правильно' }
+	
+				else
+				{ document.forms[0].elements[i].value = 'Не правильно' }
+			}
+			};
+			
+		</script>
+		
+	</body>
+
+</html>
